@@ -8,15 +8,15 @@ function App() {
   const location = useLocation();
 
   // Function to check if the current path is the homepage
-  const isHomepage = () => {
-    return location.pathname === '/homepage';
+  const isHomepageOrLogin = () => {
+    return location.pathname === '/homepage' || location.pathname === '/login';
   };
 
   return (
     <>
-      <div className="w-full flex">
+        <div className="w-full flex">
         {/* {Navigation Bar} */}
-        {!isHomepage() && <Navbar />}
+        {!isHomepageOrLogin() && <Navbar /> }
 
         {/* PAGE ROUTES */}
         <main className="grow">
